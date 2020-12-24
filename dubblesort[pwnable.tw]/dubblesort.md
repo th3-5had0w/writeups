@@ -49,7 +49,7 @@
 
 ![pic5](https://github.com/th3-5had0w/writeups/blob/main/dubblesort%5Bpwnable.tw%5D/res/pic_5.png)
 
-#### Vì chương trình đọc input các số vào bằng hàm `scanf` nên ta có thể bypass dễ dàng bằng cách nhập một kí tự không phải là số vào ô dữ liệu nơi chứa `Stack Canary`, cụ thể ở đây là ở số thứ 25.
+#### Chương trình đọc input các số vào bằng hàm `scanf` nên ta có thể bypass dễ dàng bằng cách nhập các kí tự như `-, +,...` vào ô dữ liệu nơi chứa `Stack Canary`, cụ thể ở đây là ở số thứ 25.
 
 ![pic6](https://github.com/th3-5had0w/writeups/blob/main/dubblesort%5Bpwnable.tw%5D/res/pic_5.png)
 
