@@ -2,15 +2,15 @@
 
 
 
-> [ThisLove]()
+> [ThisLove](https://github.com/th3-5had0w/writeups/raw/main/Efiens_Individual_CTF_2020/ThisLove/thislove)
 
-[Phiên bản libc local (Ubuntu 20.04)]()
+[Phiên bản libc local (Ubuntu 20.04)](https://github.com/th3-5had0w/writeups/raw/main/Efiens_Individual_CTF_2020/ThisLove/local_libc.so.6)
 
 ## Tìm lỗi
 
 #### Đầu tiên là về struct của một Letter object, nó có dạng như thế này:
 
-![pic3]()
+![pic3](https://github.com/th3-5had0w/writeups/blob/main/Efiens_Individual_CTF_2020/ThisLove/res/pic_3.png)
 
 ### Tổng quát chức năng hàm `NewLetter`
 
@@ -103,13 +103,13 @@ void __cdecl SendLetter()
 
 #### Vậy là ta đã có thể kiểm soát hoàn toàn luồng thực thi của chương trình với lỗi overflow ở hàm `NewLetter` và chức năng gọi hàm ở hàm `SendLetter`
 
-![pic2]()
+![pic2](https://github.com/th3-5had0w/writeups/blob/main/Efiens_Individual_CTF_2020/ThisLove/res/pic_2.png)
 
 #### Ở đây chương trình chỉ cho tạo struct 3 lần, đến lần thứ tự sẽ hiện thông báo `Sorry, you are blocked!` và exit.
 
 #### Vậy trong lần gọi hàm `NewLetter` đầu tiên ta sẽ đánh lừa chương trình khởi tạo con trỏ `p`
 
-#### Lần gọi hàm `NewLetter` thứ hai ta sẽ sử dụng lỗi overflow và hàm `SendLetter` để [leak libc]()
+#### Lần gọi hàm `NewLetter` thứ hai ta sẽ sử dụng lỗi overflow và hàm `SendLetter` để [leak libc](https://github.com/th3-5had0w/writeups/raw/main/Efiens_Individual_CTF_2020/ThisLove/leaked_libc.so)
 
 #### Sau khi đã leak được libc thì lần gọi hàm thứ ba, cũng là lần gọi cuối cùng ta sẽ sử dụng lỗi overflow và hàm `SendLetter` để gọi hàm `system` với tham số là `/bin/sh`
 
