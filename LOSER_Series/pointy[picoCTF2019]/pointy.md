@@ -49,7 +49,7 @@ int main (int argc, char **argv)
     return 0;
 }
 ```
-#### We can now sense some buggy smell throught that 4 place
+#### We can now sense some buggy smell throught that 5 place
 
 ```C
 struct Professor {
